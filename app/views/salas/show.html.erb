@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @sala.nombre %>
+</p>
+
+<p>
+  <strong>Apikey:</strong>
+  <%= @sala.apikey %>
+</p>
+
+<p>
+  <strong>Sessionid:</strong>
+  <%= @sala.sessionID %>
+</p>
+
+<p>
+  <strong>Token:</strong>
+  <%= @sala.token %>
+</p>
+
+<p>
+  <strong>Minutos:</strong>
+  <%= @sala.minutos %>
+</p>
+
+<%= link_to 'Edit', edit_sala_path(@sala) %> |
+<%= link_to 'Back', salas_path %>
