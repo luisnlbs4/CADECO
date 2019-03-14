@@ -11,7 +11,7 @@
   <hr>
   <%= link_to 'Nueva Sala +', new_sala_path , class: "btn btn-success" %>
   <br><br>
-  <table class="table">
+  <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
         <th>#</th>
@@ -27,9 +27,9 @@
           <td><%= @contador %></td>
           <td><%= sala.nombre %></td>
           <td><%= sala.minutos %></td>
-          <td><%= link_to 'Show', sala %></td>
-          <td><%= link_to 'Edit', edit_sala_path(sala) %></td>
-          <td><%= link_to 'Destroy', sala, method: :delete, data: { confirm: 'Esta Seguro de eliminar la sala?' } %></td>
+          <td><%= link_to 'Ver', sala %></td>
+          <td><%= link_to 'Editar', edit_sala_path(sala) %></td>
+          <td><%= link_to 'Eliminar', sala, method: :delete, data: { confirm: 'Esta Seguro de eliminar la sala?' } %></td>
         </tr>
         <% @contador= @contador+1 %>
       <% end %>

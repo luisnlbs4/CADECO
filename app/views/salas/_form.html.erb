@@ -13,27 +13,27 @@
 
   <div class="form-group">
     <label><strong>Nombre de la Sala :</strong></label>
-    <%= form.text_field :nombre ,class: "form-control" %>
+    <%= form.text_field :nombre ,class: "form-control", :required => true ,placeholder: "example"%>
   </div>
 
   <div class="form-group">
     <label><strong>API Key :</strong></label>
-    <%= form.text_field :apikey ,class: "form-control , required" %>
+    <%= form.text_field :apikey ,class: "form-control",  :required => true , placeholder: "example1234"%>
   </div>
 
   <div class="field">
     <label><strong>Session ID :</strong></label>
-    <%= form.text_area :sessionID , class: "form-control"%>
+    <%= form.text_area :sessionID , class: "form-control", :rows => 4 , :required => true %>
   </div>
 
   <div class="form-group">
     <label><strong>Token :</strong></label>
-    <%= form.text_area :token , class: "form-control"%>
+    <%= form.text_area :token , class: "form-control", :rows => 4, :required => true %>
   </div>
 
   <div class="form-group">
     <label><strong>Cantidad de Minutos de la Sala :</strong></label>
-    <%= form.number_field :minutos ,class: "form-control" , :value => 1800 %>
+    <%= form.number_field :minutos ,class: "form-control" , :value => 1800, :required => true %>
   </div>
 
   <div class="actions">
