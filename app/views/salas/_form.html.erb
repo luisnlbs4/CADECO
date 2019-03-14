@@ -11,32 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nombre %>
-    <%= form.text_field :nombre %>
+  <div class="form-group">
+    <label><strong>Nombre de la Sala :</strong></label>
+    <%= form.text_field :nombre ,class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <label><strong>API Key :</strong></label>
+    <%= form.text_field :apikey ,class: "form-control , required" %>
   </div>
 
   <div class="field">
-    <%= form.label :apikey %>
-    <%= form.text_field :apikey %>
+    <label><strong>Session ID :</strong></label>
+    <%= form.text_area :sessionID , class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :sessionID %>
-    <%= form.text_area :sessionID %>
+  <div class="form-group">
+    <label><strong>Token :</strong></label>
+    <%= form.text_area :token , class: "form-control"%>
   </div>
 
-  <div class="field">
-    <%= form.label :token %>
-    <%= form.text_area :token %>
-  </div>
-
-  <div class="field">
-    <%= form.label :minutos %>
-    <%= form.number_field :minutos %>
+  <div class="form-group">
+    <label><strong>Cantidad de Minutos de la Sala :</strong></label>
+    <%= form.number_field :minutos ,class: "form-control" , :value => 1800 %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  "Guardar"  , class: "btn btn-success btn-block"%>
   </div>
 <% end %>
