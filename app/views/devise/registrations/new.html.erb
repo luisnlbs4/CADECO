@@ -15,11 +15,13 @@
             <%= render "devise/shared/error_messages", resource: resource %>
             <img src="http://www.socialbiblio.com/sites/default/files/expertos/persona2.png" width="40%">
             <br><br>
-              <%= f.text_field :nombre, autofocus: true  , class: "form-control mb-2", placeholder: "nombre"%>
-              <%= f.text_field :tipo, autofocus: true , class: "form-control mb-2", placeholder: "tipo"%>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control mb-2", placeholder: "email" %>
-              <%= f.password_field :password, autocomplete: "new-password" , class: "form-control mb-2", placeholder: "6 caracteres como Minimo"%>
-              <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control mb-2", placeholder: "password confirmation" %>
+              <%= f.hidden_field :tipo, :value => "normal" %>
+              <%= f.hidden_field :estado, :value => "activo" %>
+              <%= f.text_field :nombre, autofocus: true  , class: "form-control mb-2", placeholder: "nombres", :required => true %>
+              <%= f.text_field :apellido, autofocus: true  , class: "form-control mb-2", placeholder: "apellidos", :required => true %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: "form-control mb-2", placeholder: "email", :required => true %>
+              <%= f.password_field :password, autocomplete: "new-password" , class: "form-control mb-2", placeholder: "6 caracteres como Minimo", :required => true%>
+              <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: "form-control mb-2", placeholder: "password confirmation" ,:required => true %>
 
             <div class="actions">
               <%= f.submit "Guardar"  , class: "btn btn-primary btn-block mb-2"%>
