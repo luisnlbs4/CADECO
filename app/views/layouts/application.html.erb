@@ -57,6 +57,10 @@
           <a class="dropdown-item" href="#"><i class="fa fa-commenting" aria-hidden="true"></i> Programadas</a>
         </div>
       </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="/llamadaslibres" >Notificaciones</a>
+      </li>
     </ul>
     <ul class="navbar-nav">
       <li class="nav-item dropdown">
@@ -65,12 +69,13 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/salas">editar</a>
-          <%= link_to 'Salir', destroy_user_session_path, method: :delete , class: "dropdown-item"%>
+          <a class="dropdown-item" href="/users/logout">Salir</a>
         </div>
       </li>
     </ul>
   </div>
 </nav>
+
 <%end%>
 <br>
     <%= yield %>

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_21_233314) do
+ActiveRecord::Schema.define(version: 2019_03_31_185827) do
+
+  create_table "llamadaslibres", force: :cascade do |t|
+    t.string "idEmisor"
+    t.string "idReceptor"
+    t.string "idSala"
+    t.string "estado"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "salas", force: :cascade do |t|
     t.string "nombre"
@@ -20,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_233314) do
     t.integer "minutos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "estado"
   end
 
   create_table "users", force: :cascade do |t|

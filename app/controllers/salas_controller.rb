@@ -25,7 +25,7 @@ class SalasController < ApplicationController
   # POST /salas.json
   def create
     @sala = Sala.new(sala_params)
-
+    @sala.estado = "ocupado"
     respond_to do |format|
       if @sala.save
         format.html { redirect_to salas_url, notice: 'Sala creada correctamente.' }
