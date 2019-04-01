@@ -4,18 +4,12 @@
 
 <script type="text/javascript">
   function myFunction() {
-  longfunctionfirst(shortfunctionsecond);
-}
-
-function longfunctionfirst(callback) {
-  setTimeout(function() {
-
     <% if (Llamadaslibre.exists?(id: params[:id])) %>
 
     <% @llamada = Llamadaslibre.find(@llamadaslibre.id)%>
     <% if @llamada.estado == "conectado" %>
     <% @idSala = @llamada.idSala %>
-       window.location.href="/salas/<%= @idSala %>"
+        refrescar("/salas/<%=  @idSala %>")
        <% @llamada.destroy %>
     <% end %>
     <% if @llamada.estado == "rechazado" %>
@@ -23,29 +17,19 @@ function longfunctionfirst(callback) {
      <% @sala.estado = "libre" %>
      <% @sala.save %>
       <% Llamadaslibre.destroy(@llamadaslibre.id) %>
+      refrescar("/llamadaslibres")
     <% end %>
-
     <% end %>
-
-
-   if(typeof callback == 'function')
-    callback();
-  }, 3000);
 };
 
-function shortfunctionsecond() {
-  setTimeout(refrescar(), 200);
-};
-
-function refrescar(){
+function refrescar(url){
   <% if (Llamadaslibre.exists?(id: params[:id])) %>
     window.location.href="/llamadaslibres/<%= @llamadaslibre.id %>"
   <% else %>
-    window.location.href="/llamadaslibres/"
+    window.location.href= url
  <%end%>
 
 };
-
 
 
   var i = setInterval(function() { myFunction(); }, 200);
@@ -60,25 +44,3 @@ function refrescar(){
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Idemisor:</strong>
-  <%= @llamadaslibre.idEmisor %>
-</p>
-
-<p>
-  <strong>Idreceptor:</strong>
-  <%= @llamadaslibre.idReceptor %>
-</p>
-
-<p>
-  <strong>Idsala:</strong>
-  <%= @llamadaslibre.idSala %>
-</p>
-
-<p>
-  <strong>Estado:</strong>
-  <%= @llamadaslibre.estado %>
-</p>
-
-
-<%= link_to 'Edit', edit_llamadaslibre_path(@llamadaslibre) %> |
-<%= link_to 'Back', llamadaslibres_path %>

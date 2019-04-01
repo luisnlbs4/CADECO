@@ -16,6 +16,16 @@ def rechazar
 end
 
 
+def contestar
+  puts params[:idllamada]
+  @llamadas = Llamadaslibre.find(params[:idllamada])
+  @llamadas.estado = "conectado"
+  @llamadas.save
+  redirect_to "/salas/"+@llamadas.idSala
+end
+
+
+
 
   # GET /llamadaslibres
   # GET /llamadaslibres.json

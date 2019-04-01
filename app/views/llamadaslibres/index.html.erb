@@ -18,7 +18,7 @@
         <tr>
           <td><strong>Llamadas de :</strong></td>
           <td><%= llamadaslibre.idEmisor %></td>
-          <td><a  class= " btn btn-success"href="#">Contestar</a>
+          <td><a  class= " btn btn-success" href="/llamada/contestar/<%= llamadaslibre.id %>">Contestar</a>
           <a  class= " btn btn-danger" href="/llamada/rechazar/<%= llamadaslibre.id %>" > Rechazar </a></td>
         </tr>
       <% end %>

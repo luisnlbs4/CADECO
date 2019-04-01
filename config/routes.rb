@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/users/crearllamada/:idemisor' => 'users#crearllamada'
 
   get '/llamada/rechazar/:idllamada' => 'llamadaslibres#rechazar'
+  get '/llamada/contestar/:idllamada' => 'llamadaslibres#contestar'
+
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
