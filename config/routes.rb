@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get '/llamada/contestar/:idllamada' => 'llamadaslibres#contestar'
 
 
+  get '/llamada/colgar/:idllamada' => 'llamadaslibres#colgar'
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

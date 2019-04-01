@@ -7,23 +7,30 @@ class LlamadaslibresController < ApplicationController
 
 def rechazar
 
-  puts params[:idllamada]
-  @llamadas = Llamadaslibre.find(params[:idllamada])
-  @llamadas.estado = "rechazado"
-  @llamadas.save
+  @llamada = Llamadaslibre.find(params[:idllamada])
+  @llamada.estado = "rechazado"
+  @llamada.save
   redirect_to "/llamadaslibres"
 
 end
 
 
 def contestar
-  puts params[:idllamada]
-  @llamadas = Llamadaslibre.find(params[:idllamada])
-  @llamadas.estado = "conectado"
-  @llamadas.save
-  redirect_to "/salas/"+@llamadas.idSala
+  @llamada = Llamadaslibre.find(params[:idllamada])
+  @llamada.estado = "conectado"
+  @llamada.save
+  redirect_to "/salas/"+@llamada.idSala
 end
 
+
+def colgar
+  @llamada = Llamadaslibre.find(params[:idllamada])
+  @sala = Sala.find(@llamada.idSala)
+  @sala.estado = "libre"
+  @sala.save
+  @llamada.destroy
+  redirect_to "/users/index"
+end
 
 
 
